@@ -1,6 +1,5 @@
 import requests
 import requests_cache 
-import json
 
 
 #setup our api cache location (this is going to make a temporary database storage for our api calls)

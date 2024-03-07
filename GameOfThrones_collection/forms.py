@@ -19,7 +19,10 @@ class RegisterForm(FlaskForm):
     submit = SubmitField('Sign Up')
 
 
+class CharacterForm(FlaskForm):
+    fullName = StringField('Character Name', validators=[ DataRequired() ] )
+    image = StringField('Img url **Optional')
+    description = StringField('Description **Optional')
+    submit = SubmitField('Submit')
 
 
-
-    
