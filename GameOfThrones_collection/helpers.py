@@ -1,5 +1,7 @@
 import requests
 import requests_cache 
+import json
+import decimal
 
 
 #setup our api cache location (this is going to make a temporary database storage for our api calls)
@@ -27,3 +29,13 @@ def get_character():
     data = response.json()
 
     return data
+
+
+
+class JSONEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, decimal.Decimal): #if the object is a decimal we are going to encode it 
+                return str(obj)
+        return json.JSONEncoder(JSONEncoder, self).default(obj) #if not the JSONEncoder from json class can handle it
+    
+

@@ -10,8 +10,8 @@
         <div class="col-3 ms-5 d-flex flex-column justify-content-center">
             <h2>Welcome to your Character Collection!</h2>
             {% if current_user.is_authenticated %}
-            <h5>All of your favorite Characters will show up here</h5>
-            <a href="#" class="btn btn-outline-dark mt-3">Add More Characters</a>
+            <h5>All of your favorite Characters will show up down below</h5>
+            <a href="{{ url_for('site.add') }}" class="btn btn-outline-light mt-3">Add More Characters</a>
             {% else %}
             <h5>Please Sign In to View Your Collection</h5>
             <a href="/signin" class="btn btn-outline-dark mt-3">Sign In</a>
@@ -20,7 +20,7 @@
     </div>
     {% if current_user.is_authenticated %}
     <div class="row bg-dark p-3 collection-stats">
-        <div class="col d-flex justify-content-center">Total # of Characters: 0</div>
+        <div class="col d-flex justify-content-center">Total # of Characters: {{ stats.characters }}</div>
     </div>
     {% for character in character_collection %}
     <div class="row mt-5 mb-5 justify-content-center">
@@ -30,10 +30,10 @@
             </div>
             <div class="card-body d-flex flex-column justify-content-center p-4">
                 <h5 class="card-title"> {{ character.full_name }}</h5>
-                <p class="card-text"> {{ character.first_name }}</p>
-                <p class="card-text"> {{ character.last_name }}</p>
-                <p class="card-text"> {{ character.title }}</p>
-                <p class="card-text"> {{ character.family }}</p>
+                <p class="card-text">First Name: {{ character.first_name }}</p>
+                <p class="card-text">Last Name: {{ character.last_name }}</p>
+                <p class="card-text">Title: {{ character.title }}</p>
+                <p class="card-text">Family: {{ character.family }}</p>
                 <p class="card-text"> {{ character.description }}</p>  
                 <div class="mt-2">
                     <a href="{{ url_for('site.update', id=character.character_id )}}" class="card-link btn btn-warning">Update Character</a>

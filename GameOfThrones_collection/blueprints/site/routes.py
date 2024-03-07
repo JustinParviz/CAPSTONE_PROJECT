@@ -6,7 +6,7 @@ from GameOfThrones_collection.models import Character, db
 from GameOfThrones_collection.forms import CharacterForm
 
 
-#need to instantiate our Blueprint class
+#need to instantiate the Blueprint class
 site = Blueprint('site', __name__, template_folder='site_templates')
 
 
@@ -17,8 +17,16 @@ def character_collection():
     #need to query the database to grab all of the characters to display
     allcharacters = Character.query.all() #the same as SELECT * FROM characters, list of objects 
 
+
+    #making a dictionary for the shop stats/info
+
+    collection_stats = {
+        'characters' : len(allcharacters), # this is how many total characters the user has
+    }
+
+
                             #whats on left side is html, right side is whats in our route
-    return render_template('character_collection.html', character_collection=allcharacters) #looking inside the template_folder (site_templates) to find the character_collection.html file
+    return render_template('character_collection.html', character_collection=allcharacters, stats=collection_stats) #looking inside the template_folder (site_templates) to find the character_collection.html file
 
 
 @site.route('/character_collection/add', methods= ['GET', 'POST']) 
@@ -34,7 +42,7 @@ def add():                                       # *** CHANGED THIS FROM "CREATE
 
     if request.method == 'POST' and addform.validate_on_submit():
         #grab our data from our form
-        full_name = addform.full_name.data
+        full_name = addform.full_name.data.title()
         description = addform.description.data
          
         for i in characters:

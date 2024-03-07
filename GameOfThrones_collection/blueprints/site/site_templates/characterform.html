@@ -2,7 +2,7 @@
     {{ form.hidden_tag() }}
     <div class="col-12">
         {{ form.full_name.label }}
-        {{ form.full_name(class='form-control mt-2', placeholder='Character's Full Name') }}
+        {{ form.full_name(class='form-control mt-2', placeholder="Character's Full Name") }}
         {% for error in form.full_name.errors %}
             <span class="err-msg">{{ error }}</span>
         {% endfor %}

@@ -1,13 +1,13 @@
 /* Collection Page CSS */
 
 
-.shop-header {
+.collection-header {
     background-image: url("../images/GoT_CapstoneProject_image.jpg");
     background-size: cover;
     height: 900px;
     color: white; 
 }
 
-.shop-stats {
+.collection-stats {
     color: white; 
 }

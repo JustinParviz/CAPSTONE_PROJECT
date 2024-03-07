@@ -42,7 +42,7 @@ def signup():
         
         user = User(username, email, password, first_name, last_name) 
 
-        #now we can add our user object to our database
+        #now we can add the user object to the database
         db.session.add(user) #think of this like "git add ."
         db.session.commit() #think of this like "git commit"
 
