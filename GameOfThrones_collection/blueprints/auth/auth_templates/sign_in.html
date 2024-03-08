@@ -4,13 +4,13 @@
 {% block content %}
 
 
-<div class="container d-flex justify-content-center align-items-center">
-    <div class="row mt-5 p-5 shadow rounded border border-primary w-75">
+<div class="container log-in-container d-flex justify-content-center align-items-center">
+    <div class="log-in row mt-5 p-5 shadow rounded w-75">
         <div class="col d-flex">
             <img src="../../../static/images/GoT_CapstoneProject_image_3.jpg" class='img-fluid rounded' alt="" srcset="">
         </div>
         <div class="col">
-            <form action="" class="row g-3" method="POST">
+            <form action="" class="row log-in-form g-3" method="POST">
                 {{ form.hidden_tag() }}
                 <h3>Log into your Account!</h3>
                 <div class="col-12">
@@ -28,7 +28,7 @@
                     {% endfor %}
                 </div>
                 <div class="col-12">
-                    {{ form.submit(class='btn btn-danger') }}
+                    {{ form.submit(class='btn log-in-button btn-outline-light') }}
                 </div>
             </form>
         </div>

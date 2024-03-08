@@ -1,3 +1,7 @@
+from flask import Flask, request, jsonify
+from base64 import b64encode
+
+
 import requests
 import requests_cache 
 import json
@@ -39,3 +43,32 @@ class JSONEncoder(json.JSONEncoder):
         return json.JSONEncoder(JSONEncoder, self).default(obj) #if not the JSONEncoder from json class can handle it
     
 
+
+
+# *** SPOTIFY API ***
+    
+app = Flask(__name__)
+
+
+# Spotify API credentials
+CLIENT_ID = "5cf48f0b3d714f848e8aa1877f8a3aa3"
+CLIENT_SECRET = "ea358d91e80743b3a62fd9fc430001d5"
+
+
+def get_token():
+    """
+    Function to get Spotify access token
+    """
+
+    url = "https://accounts.spotify.com/api/token"
+    
+    headers = {
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Authorization': 'Basic ' + base64.b64encode(f"{CLIENT_ID}:{CLIENT_SECRET}".encode()).decode()
+    }
+    body = {
+        'grant_type': 'client_credentials'
+    }
+    response = requests.post(url, headers=headers, data=body)
+    data = response.json()
+    return data.get('access_token')

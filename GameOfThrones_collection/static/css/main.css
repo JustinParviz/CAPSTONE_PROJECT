@@ -8,6 +8,113 @@
     color: white; 
 }
 
+
 .collection-stats {
-    color: white; 
+    color: #E7E995; 
 }
+
+
+.collection-stats {
+    background-color: #a03115;
+    font-family: Trajan Pro;
+    font-size: 18px;
+    border: 1px solid #E7E995;
+}
+
+
+.navbar {
+    background-color: #a03115;
+    font-family: Trajan Pro;
+    border-bottom: 2px solid #E7E995;
+}
+
+
+.navbar a {
+    color: #E7E995;
+}
+
+
+.navbar a:hover {
+    color: white;
+}
+
+
+.header {
+    background-color: #a03115;
+    height: 23vh;
+    margin-top: 25vh;
+    border: 2px solid #E7E995;
+    font-family: Trajan Pro;
+}
+
+
+.header > h2, .header > h5, .header > a {
+    color: #E7E995;
+}
+
+
+.header-button:hover {
+    background-color: #E7E995;
+}
+
+
+.log-in-container {
+    margin-top: 10vh;
+}
+
+
+.log-in {
+    background-color: #a03115;
+    border: 5px solid #E7E995;
+}
+
+
+.log-in-form {
+    font-family: Trajan Pro;
+    color: #E7E995;
+}
+
+
+.log-in-button {
+    background-color: #a03115;
+    border: 2px solid #E7E995;
+    color: #E7E995;
+}
+
+
+.log-in-button:hover {
+    background-color: #E7E995;
+}
+
+
+.register {
+    background-color: #a03115;
+    border: 5px solid #E7E995;
+}
+
+
+.register-form {
+    font-family: Trajan Pro;
+    color: #E7E995;
+}
+
+
+.register-button {
+    background-color: #a03115;
+    border: 2px solid #E7E995;
+    color: #E7E995;
+}
+
+
+.register-button:hover {
+    background-color: #E7E995;
+}
+
+
+/* .bottom-notice {
+    font-family: Trajan Pro;
+    color: #E7E995; 
+    background-color: #a03115;
+    border: 2px solid #E7E995; 
+    padding: 40px;
+} */

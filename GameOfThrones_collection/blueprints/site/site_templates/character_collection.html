@@ -7,19 +7,19 @@
 <div class="container-fluid justify-content-center">
     
     <div class="row collection-header p-5">
-        <div class="col-3 ms-5 d-flex flex-column justify-content-center">
-            <h2>Welcome to your Character Collection!</h2>
+        <div class="header col-3 ms-5 d-flex flex-column justify-content-center text-center">
+            <h2>Welcome to your GoT Character Collection!</h2>
             {% if current_user.is_authenticated %}
-            <h5>All of your favorite Characters will show up down below</h5>
-            <a href="{{ url_for('site.add') }}" class="btn btn-outline-light mt-3">Add More Characters</a>
+            <h5>All of your favorite Game of Thrones Characters will show up down below</h5>
+            <a href="{{ url_for('site.add') }}" class="btn btn-outline-light header-button mt-3">Add More Characters</a>
             {% else %}
             <h5>Please Sign In to View Your Collection</h5>
-            <a href="/signin" class="btn btn-outline-dark mt-3">Sign In</a>
+            <a href="/signin" class="btn btn-outline-light header-button mt-3">Sign In</a>
             {% endif %}
         </div>
     </div>
     {% if current_user.is_authenticated %}
-    <div class="row bg-dark p-3 collection-stats">
+    <div class="row p-3 collection-stats">
         <div class="col d-flex justify-content-center">Total # of Characters: {{ stats.characters }}</div>
     </div>
     {% for character in character_collection %}
@@ -44,7 +44,7 @@
     </div>
     {% endfor %}
     {% else %}
-    <div class="row mt-5 mb-5 d-flex align-items-center">
+    <div class="row bottom-notice mt-5 mb-5 d-flex align-items-center">
         <h3 class="d-flex justify-content-center">Your Characters Will Show Up Here Once Signed In</h3>
     </div>
     {% endif %}

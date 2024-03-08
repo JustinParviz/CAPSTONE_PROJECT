@@ -5,12 +5,12 @@
 
 
 <div class="container d-flex justify-content-center align-items-center">
-    <div class="row mt-5 p-5 shadow rounded border border-primary w-75">
+    <div class="row mt-5 p-5 shadow rounded register w-75">
         <div class="col d-flex">
             <img src="../../../static/images/GoT_2.jpg" class='img-fluid rounded' alt="" srcset="">
         </div>
         <div class="col">
-            <form action="" class="row g-3" method="POST">
+            <form action="" class="row register-form g-3" method="POST">
                 {{ form.hidden_tag() }}
                 <h3>Register Now!</h3>
                 <div class="col-md-6">
@@ -50,7 +50,7 @@
                     {% endfor %}
                 </div>
                 <div class="col-12">
-                    {{ form.submit(class='btn btn-danger') }}
+                    {{ form.submit(class='btn register-button btn-outline-light') }}
                 </div>
             </form>
         </div>
